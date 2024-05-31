@@ -15,13 +15,15 @@ import com.example.app.ui.theme.APPTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val myString : String = getString(R.string.message)
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             APPTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = myString,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -37,7 +39,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "$name!",
         modifier = modifier
     )
 }
